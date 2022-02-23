@@ -1,7 +1,6 @@
 console.log("This page works!");
 
-// define any DOM element references (use jquery?)
-// to-do: add additional elements if needed
+// define any DOM element references 
 var todaysDateEl = $("#currentDay"); //date and time are showing here
 var todaysTimeEl = $("currentTime"); //created this in case i wanted to do time separate
 var currMoment = moment(); //moment variable
@@ -17,11 +16,7 @@ $(todaysDateEl).text(currMoment.format("LLLL"));
 console.log("time displays!!!");
 
 // Time Table Container Section
-// maybe i am using my variables timeOptions or timeOptionsEl incorrectly
-// create list of times that would be available on schedule (these should only go in column 1)
-// create an object array [times (will complete), userInfo]
-
-//  testing this out if i get it to work i'll finish times
+// TODO Convert from military time to business hours
 var timeOptions = [
   "9",
   "10",
@@ -72,8 +67,6 @@ function renderData() {
     timeList.append(newRowEl);
 
     // with some formatting conditions for past, present, future events
-    // if the time in hh current moment =
-    // note this is not working correctly maybe because format of array?
     if (moment(currMoment).format("hh") > i) {
       newRowEl.addClass("past"); //gray
     } else if (moment(currMoment).format("hh") < i) {
@@ -114,52 +107,3 @@ $(".saveBtn").click(function () {
   localStorage.setItem(hourEL, discEl);
 });
 
-
-// jQuery to on click change color
-/* $("button").click function() {$("h1").css("color", "purple");
-});
-
-// jQuery to detect keystrokes
-// $("tbody").keypress(function(event) {
-  $("input-group-append").text(event.key);
-  console.log (event.key);
-});
-
-// $("tbody").click(function(event) {
-  $("input-group-append").text(event.key);
-  console.log (event.key);
-});
-
-/ $("tbody").on(click, function(event) {
-  $("input-group-append").text(event.key);
-  console.log (event.key);
-});
-
-Create new elements in html (opening tag)
-.before ("<button>")
-.after
-.prepend
-.append 
-
-change value of any element (ex ahref)
-$("a").attr("value to change", "change value");
-
-*/
-// }
-//
-
-// var timeOptionsEl to create new element for (<tr>) for everything between <tr> and <td> within that for each timeOption [i]
-// timeOptionsEl = $('<tr' + timeOptions[i] + '</td>');
-// console.log([i]);
-// $('#timeList > tbody:last-child').append('<tr>...</tr>');
-
-// add this new element <tr> created to the table container
-// timeList.append(timeOptionsEl);
-
-// this is in our class work but not sure if i need to do this:
-// select all <tr> elements on page (same as getElementbyId)
-// $.each (timeOptions, function(i, timeOptions) {
-//     timeOptionsEl.append('<tr>' + timeOptions + '/<tr>');
-// })
-
-// }
