@@ -20,6 +20,9 @@ This planner can be utilized to schedule events.
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/screenshot.png )
 
 
+## License
+  ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
+
 ## Links
 Link: https://amywilhoite.github.io/05-Work-Day-Scheduler/ <br>
 Git Hub: https://github.com/AmyWilhoite/05-Work-Day-Scheduler.git
